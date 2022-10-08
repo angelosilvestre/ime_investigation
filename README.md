@@ -60,7 +60,7 @@ void setTextInputEditingState(View view, TextInputChannel.TextEditState state) {
 
 1. Run the app on Android
 2. Tap "Attach to IME"
-3. Press the new line button on the software keyboard
+3. Press the new line button on the software keyboard (This will simulate a new paragraph being created)
 4. Type a
 5. Press Backspace quickly 3 times
 
