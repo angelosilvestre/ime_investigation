@@ -2,6 +2,8 @@
 
 This repo simulates the way [SuperEditor](https://github.com/superlistapp/super_editor) interacts with the IME through the delta model, to demonstrate a crash that is ocurring.
 
+When we receive the deltas, we always sync our current text with the OS, sending back to the OS the composing region of the last delta. 
+
 At some point, we are sending our new text to the OS and we are getting back a `TextEditingDeltaNonTextUpdate` with an outdated content. When we try to send our text to the OS again, we get a crash from the framework.
 
 We send our updated text to the OS:
