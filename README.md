@@ -2,11 +2,7 @@
 
 This repo simulates the way [SuperEditor](https://github.com/superlistapp/super_editor) interacts with the IME through the delta model, to demonstrate a crash that is ocurring.
 
-When the user is editing an empty paragraph, `SuperEditor` sends a placeholder text to the OS. That way, the user is able to press backspace to remove the empty paragraph.
-
-When the empty paragraph is removed, the preceding paragraph is selected. In this case, `SuperEditor` sends to the OS the text of the selected paragraph.
-
-At some point, we are sending our new text to the OS and we are getting back a `TextEditingDeltaNonTextUpdate` with an outdated content. When we try to sync with the OS again, we get a crash from the framework.
+At some point, we are sending our new text to the OS and we are getting back a `TextEditingDeltaNonTextUpdate` with an outdated content. When we try to send our text to the OS again, we get a crash from the framework.
 
 We send our updated text to the OS:
 ```
